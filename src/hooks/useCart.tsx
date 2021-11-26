@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
 import { toast } from 'react-toastify';
-import { isTemplateTail } from 'typescript';
+// import { isTemplateTail } from 'typescript';
 import { api } from '../services/api';
 import { Product, Stock } from '../types';
 
@@ -113,6 +113,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         product.amount = amount 
         setCart(updateCart)
         localStorage.setItem('@RocketShoes:cart', JSON.stringify(updateCart)) 
+      }else{
+        throw Error()
       }
      
 
